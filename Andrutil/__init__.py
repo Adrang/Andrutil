@@ -3,7 +3,7 @@ import shutil
 from pathlib import Path
 
 name = 'Andrutil'
-version = '0.1'
+version = '0.2'
 
 SOURCE_PACKAGE = os.path.split(__file__)[0]
 PROJECT_PATH = os.path.split(SOURCE_PACKAGE)[0]
