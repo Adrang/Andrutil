@@ -14,10 +14,9 @@ from urllib.parse import urlparse
 
 import requests
 from IPython import get_ipython
-from requests import HTTPError
 from tqdm import tqdm
 
-from CalCounter import SOURCE_PACKAGE
+from Andrutil import SOURCE_PACKAGE
 
 
 def is_float(val):
@@ -300,7 +299,7 @@ def download_large_file(url_path, save_directory, c_size: int = 512,
         download_progress.close()
         print('Time to download: {:.4f} s'.format(download_progress.format_dict['elapsed']))
         os.rename(part_file, local_fname)
-    except HTTPError as http_err:
+    except requests.HTTPError as http_err:
         print(f'HTTP error occurred: {http_err}')
         local_fname = ''
     except Exception as err:

@@ -3,7 +3,7 @@
 @description
 """
 import matplotlib.pyplot as plt
-import numpy as np
+import numpy
 from matplotlib import style
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
@@ -14,17 +14,17 @@ def plot_confusion_matrix(y_true, y_pred, class_labels, title,
     style.use('ggplot')
     fig_title = f'Target: \'{title}\''
     conf_mat = confusion_matrix(y_true, y_pred)
-    conf_mat = conf_mat.astype('float') / conf_mat.sum(axis=1)[:, np.newaxis]
+    conf_mat = conf_mat.astype('float') / conf_mat.sum(axis=1)[:, numpy.newaxis]
 
-    lower_bound = np.min(y_true) - 0.5
-    upper_bound = np.max(y_true) + 0.5
+    lower_bound = numpy.min(y_true) - 0.5
+    upper_bound = numpy.max(y_true) + 0.5
 
     fig, ax = plt.subplots()
     im = ax.imshow(conf_mat, interpolation='nearest', cmap=cmap)
     ax.figure.colorbar(im, ax=ax)
 
-    xtick_marks = np.arange(conf_mat.shape[1])
-    ytick_marks = np.arange(conf_mat.shape[0])
+    xtick_marks = numpy.arange(conf_mat.shape[1])
+    ytick_marks = numpy.arange(conf_mat.shape[0])
 
     ax.set_xticks(xtick_marks)
     ax.set_yticks(ytick_marks)

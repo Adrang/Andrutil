@@ -12,13 +12,13 @@ setuptools.setup(
     name=name,
     version=version,
 
-    description='',
-    ong_description=long_description,
-    long_description_content_type='text/markdown',
-    url='',
+    author='Adrang',
+    author_email='andrew@andrewtfesta.com',
 
-    author='',
-    author_email='',
+    description='packages=setuptools.find_packages(),',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    url='https://github.com/Adrang/Andrutil',
 
     packages=setuptools.find_packages(),
 
